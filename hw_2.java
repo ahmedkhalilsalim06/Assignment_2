@@ -3,7 +3,9 @@ import java.util.Random;
 public class hw_2 {
     public static void main(String[] args) {
         
-    }public static int[] array_maker(int size){
+    }
+    
+    public static int[] array_maker(int size){
         Random random = new Random();
         int[] arr = new int[size];
         for (int i = 0; i < arr.length; i++) {
@@ -42,6 +44,40 @@ public class hw_2 {
        return "The even sum: " + sumE + "\n" + "The odd sum: " + sumO;
     }
 
+    // Task C: 2 functions that find the minimum and maximum element in the given array
+    // Muhammad Saad Siddiqui
+    public static int findMinimum(int[] Array) {
+        int minimum = 101; // Define minimum with default value
 
+        // Iterate through the entire array and find the minimum element
+        for (int i = 0; i < Array.length; i++) {
+            // Get current element
+            int currentElement = Array[i]; 
+
+            // if current element is less than minimum, set minimum to currentElement
+            if ( currentElement < minimum) {
+                minimum = currentElement;
+            }
+        }
+
+        return minimum;
+    }
+
+    public static int findMaximum(int[] Array) {
+        int maximum = -1; // Define maximum with default value
+
+        // Iterate through the entire array and find the maximum element
+        for (int i = 0; i < Array.length; i++) {
+            // Get current element
+            int currentElement = Array[i];
+
+            // if current element is greater than maximum, set maximum to currentElement
+            if ( currentElement > maximum) {
+                maximum = currentElement;
+            }
+        }
+
+        return maximum;
+    }
 }
 
