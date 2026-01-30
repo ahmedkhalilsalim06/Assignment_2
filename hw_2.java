@@ -12,6 +12,19 @@ public class hw_2 {
         return arr;
     }
 
+    //Task d: 
+    //Aga
+    public static int[] diff(int[] arr){
+        int av = 0;
+        for(int i = 0; i < arr.length; i++){
+            av+=arr[i];
+        }
+        av/=arr.length;
+        for(int i = 0; i < arr.length; i++){
+            arr[i]-=av;
+        }
+        return arr;
+    }
 
     // Task e: This method calculates the sum of the elements in both odd and even indexes.
     // Parsa Hamidi
