@@ -1,6 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
-
+import java.util.Arrays;
 public class hw_2 {
     public static void main(String[] args) {
 
@@ -14,7 +14,7 @@ public class hw_2 {
         sc.nextLine();
         System.out.println("\n");
         int[] arr = array_maker(size);
-
+        System.out.println("here is the array: " + Arrays.toString(arr));
         while (cont){
             System.out.println("1. Find the max and the min");
             System.out.println("2. Find the average and  how each element of the array differs from the average");
@@ -53,14 +53,19 @@ public class hw_2 {
 
     public static int[] diff(int[] arr){
         int av = 0;
-        for(int i = 0; i < arr.length; i++){
-            av+=arr[i];
+        int[] arr2 = new int[arr.length];
+        for (int i = 0; i < arr2.length; i++) {
+            arr2[i] = arr[i];
+        }
+
+        for(int i = 0; i < arr2.length; i++){
+            av+=arr2[i];
         }
         av/=arr.length;
-        for(int i = 0; i < arr.length; i++){
-            arr[i]-=av;
+        for(int i = 0; i < arr2.length; i++){
+            arr2[i]-=av;
         }
-        return arr;
+        return arr2;
         
     }public static int[] array_maker(int size){
         Random random = new Random();
@@ -86,8 +91,38 @@ public class hw_2 {
             }
         }
        return ("The even sum: " + sumE + "\n" + "The odd sum: " + sumO);
+    }public static int findMaximum(int[] Array) {
+        int maximum = 0; // Define minimum with default value
+
+        // Iterate through the entire array and find the minimum element
+        for (int i = 0; i < Array.length; i++) {
+            // Get current element
+            int currentElement = Array[i];
+
+            // if current element is less than minimum, set minimum to currentElement
+            if ( currentElement > maximum) {
+                maximum = currentElement;
+            }
+        }
+
+        return maximum;
+    }public static int findMinimum(int[] Array) {
+        int minimum = 101; // Define minimum with default value
+
+        // Iterate through the entire array and find the minimum element
+        for (int i = 0; i < Array.length; i++) {
+            // Get current element
+            int currentElement = Array[i]; 
+
+            // if current element is less than minimum, set minimum to currentElement
+            if ( currentElement < minimum) {
+                minimum = currentElement;
+            }
+        }
+
+        return minimum;
     }
 
 
-}
 
+}
